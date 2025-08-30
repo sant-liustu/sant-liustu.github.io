@@ -31,14 +31,33 @@
             font-style: italic;
             margin-bottom: 1.5em;
         }
-        .paper {
-            margin-bottom: 1.2em;
+        .experience {
+            margin-bottom: 2em;
         }
-        .paper-title {
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5em;
+        }
+        .experience-title {
             font-weight: bold;
         }
-        .coauthors {
+        .experience-org {
             font-style: italic;
+        }
+        .experience-date {
+            color: #555;
+        }
+        .tech-stack {
+            font-family: 'Courier New', monospace;
+            color: #444;
+            font-size: 0.9em;
+        }
+        footer {
+            margin-top: 3em;
+            text-align: center;
+            color: #777;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -48,24 +67,43 @@
         <div class="affiliation">
             <p>数学科学学院本科生</p>
             <p>北京大学</p>
+            
         </div>
     </header>
 
     <section>
         <h2>研究兴趣</h2>
-        <p>大语言模型预训练 • 优化算法 • 大语言模型强化学习</p>
+        <p>大语言模型与强化学习 • 算法优化理论</p>
     </section>
 
     <section>
-        <h2>近期工作</h2>      
+        <h2>研究经历</h2>
+        <div class="experience">
+            <div class="experience-header">
+                <span class="experience-title">强化学习在数学推理中的应用</span>
+                <span class="experience-date"></span>
+            </div>
+            <div class="experience-org">微软亚洲研究院 | 机器学习组</div>
+            <ul>
+                <li></li>
+            </ul>
+            <p class="tech-stack">技术栈: Python • PyTorch • verl</p>
+        </div>
     </section>
 
     <section>
         <h2>教育背景</h2>
-        <p><strong>北京大学</strong> 数学科学学院 · 2022-至今</p>
+        <div class="experience">
+            <div class="experience-header">
+                <span class="experience-title">数学与应用数学</span>
+                <span class="experience-date">2022-至今</span>
+            </div>
+            <div class="experience-org">北京大学数学科学学院</div>
+        </div>
     </section>
+
+    <footer>
+        <p>© 2025 刘孜涵 • 最后更新: <time datetime="2025-08-30">2025年8月30日</time></p>
+    </footer>
 </body>
-<footer>
-    <p>最后更新: <time datetime="2025-08-30">2025年8月30日</time></p>
-</footer>
 </html>
