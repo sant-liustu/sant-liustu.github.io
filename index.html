@@ -3,107 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刘孜涵 | 数学与机器学习研究</title>
+    <meta name="description" content="刘孜涵 - 北京大学数学科学学院 | 机器学习与强化学习研究">
+    <title>刘孜涵 Zihan Liu | Peking University</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
+        /* --- 1. 全局变量定义 (方便后期一键改色) --- */
+        :root {
+            /* 北大红 (Deep Red) - 作为强调色 */
+            --primary-color: #8C0000; 
+            /* 浅一点的红色用于 Hover 状态 */
+            --primary-light: #B51919;
+            /* 背景色 */
+            --bg-color: #ffffff;
+            /* 辅助背景色 (用于卡片或区块) */
+            --bg-secondary: #f9f9f9;
+            /* 文字颜色 */
+            --text-main: #1a1a1a;
+            --text-secondary: #555555;
+            --text-light: #888888;
+            /* 边框颜色 */
+            --border-color: #eaeaea;
+        }
+
+        /* --- 2. 基础重置 --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-            color: #222;
-            max-width: 800px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: --text-main;
+            background-color: var(--bg-color);
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        /* --- 3. 布局容器 --- */
+        .container {
+            max-width: 800px; /* 限制最大宽度，模仿论文阅读体验 */
             margin: 0 auto;
-            padding: 2em;
+            padding: 0 20px;
         }
-        h1, h2 {
-            font-weight: normal;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.3em;
-        }
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 0.5em;
-        }
-        h2 {
-            font-size: 1.5em;
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-        }
-        .affiliation {
-            font-style: italic;
-            margin-bottom: 1.5em;
-        }
-        .experience {
-            margin-bottom: 2em;
-        }
-        .experience-header {
+
+        /* --- 4. 导航栏 (简约风格) --- */
+        header {
+            padding: 2rem 0;
+            margin-bottom: 3rem;
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5em;
+            align-items: center;
+            border-bottom: 1px solid transparent; /* 预留边框位置 */
         }
-        .experience-title {
-            font-weight: bold;
+
+        .nav-links a {
+            color: var(--text-secondary);
+            margin-left: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
         }
-        .experience-org {
-            font-style: italic;
+
+        .nav-links a:hover {
+            color: var(--primary-color);
         }
-        .experience-date {
-            color: #555;
+
+        /* --- 5. Hero 区域 (个人简介) --- */
+        .hero {
+            padding-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
         }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em; /* 稍微紧凑的字间距，更具现代感 */
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .bio {
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        /* 头像样式占位符 */
+        .avatar {
+            width: 160px;
+            height: 160px;
+            background-color: #f0f0f0; /* 灰色占位背景 */
+            border-radius: 50%; /* 圆形头像 */
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* --- 6. 通用板块样式 --- */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+            display: inline-block; /* 下划线只跟文字同宽 */
+        }
+
+        /* --- 7. 研究经历 (卡片式设计) --- */
+        .experience-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px; /* 圆角 */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* 鼠标悬停时的微交互 */
+        .experience-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            border-color: #ddd;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .exp-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .exp-date {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-family: monospace; /* 日期用等宽字体，显得技术感 */
+        }
+
+        .exp-org {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
         .tech-stack {
-            font-family: 'Courier New', monospace;
-            color: #444;
-            font-size: 0.9em;
+            margin-top: 1rem;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
         }
+
+        .tech-tag {
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: monospace;
+            border: 1px solid #eee;
+        }
+
+        /* --- 8. 教育背景 (列表式) --- */
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .edu-school { font-weight: 600; }
+        .edu-degree { color: var(--text-secondary); margin-top: 0.2rem;}
+
+        /* --- 9. 页脚 --- */
         footer {
-            margin-top: 3em;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
             text-align: center;
-            color: #777;
-            font-size: 0.9em;
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* --- 10. 移动端适配 --- */
+        @media (max-width: 600px) {
+            .hero {
+                flex-direction: column-reverse; /* 手机上文字在下，图片在上 */
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .exp-header {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            h1 { font-size: 2rem; }
+            
+            .nav-links { display: none; /* 手机端暂时隐藏导航链接，保持极简 */ }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>刘孜涵</h1>
-        <div class="affiliation">
-            <p>数学科学学院本科生</p>
-            <p>北京大学</p>
+
+    <div class="container">
+        <header>
+            <div style="font-weight: 700; font-size: 1.2rem;">Zihan Liu</div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#education">Education</a>
+                <a href="mailto:your-email@pku.edu.cn">Contact</a>
+            </nav>
+        </header>
+
+        <section id="about" class="hero">
+            <div class="hero-text">
+                <h1>刘孜涵 (Zihan Liu)</h1>
+                <p class="subtitle">Undergraduate Student @ Peking University</p>
+                <div class="bio">
+                    <p>
+                        您好！我是北京大学数学科学学院的本科生（2022级）。
+                        我对<b>数学与机器学习的交叉领域</b>充满热情，目前专注于大语言模型（LLM）预训练（Pre-training）与强化学习（RL）的算法优化理论研究。
+                    </p>
+                    <p style="margin-top: 1em;">
+                        我致力于通过数学视角来理解和改进现代 AI 系统。
+                    </p>
+                    <p style="margin-top: 1.5em;">
+                        <a href="https://github.com/sant-liustu" target="_blank">GitHub</a> / 
+                        <a href="#">Google Scholar</a> / 
+                        <a href="#">Email</a>
+                    </p>
+                </div>
+            </div>
+            <img src="personal.jpg" alt="Zihan Liu" class="avatar">
+        </section>
+
+        <section id="research">
+            <h2>研究经历 Research</h2>
             
-        </div>
-    </header>
-
-    <section>
-        <h2>研究兴趣</h2>
-        <p>大语言模型与强化学习 • 算法优化理论</p>
-    </section>
-
-    <section>
-        <h2>研究经历</h2>
-        <div class="experience">
-            <div class="experience-header">
-                <span class="experience-title">强化学习在数学推理中的应用</span>
-                <span class="experience-date"></span>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-title">强化学习在数学推理中的应用</span>
+                    <span class="exp-date">2024.06 - Present</span>
+                </div>
+                <div class="exp-org">研究实习生 | 微软亚洲研究院 (MSRA)</div>
+                <ul>
+                    <li>探索基于强化学习（RL）的方法来提升大语言模型在复杂数学问题上的推理能力。</li>
+                    <li>探索基于推理时扩展（Inference Scaling）的方法来提升大语言模型解决复杂数学问题的上限。</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">PyTorch</span>
+                    <span class="tech-tag">LLM</span>
+                    <span class="tech-tag">Reinforcement Learning</span>
+                </div>
             </div>
-            <div class="experience-org">微软亚洲研究院 | 机器学习组</div>
-            <ul>
-                <li></li>
-            </ul>
-            <p class="tech-stack">技术栈: Python • PyTorch • verl</p>
-        </div>
-    </section>
 
-    <section>
-        <h2>教育背景</h2>
-        <div class="experience">
-            <div class="experience-header">
-                <span class="experience-title">数学与应用数学</span>
-                <span class="experience-date">2022-至今</span>
+            </section>
+
+        <section id="education">
+            <h2>教育背景 Education</h2>
+            <div class="edu-item">
+                <div>
+                    <div class="edu-school">北京大学 (Peking University)</div>
+                    <div class="edu-degree">理学学士，数学与应用数学</div>
+                </div>
+                <div class="exp-date">2022 - 2026 (Expected)</div>
             </div>
-            <div class="experience-org">北京大学数学科学学院</div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <p>© 2025 刘孜涵 • 最后更新: <time datetime="2025-08-30">2025年8月30日</time></p>
-    </footer>
+        <footer>
+            <p>© 2025 Zihan Liu. Built with minimalism.</p>
+        </footer>
+    </div>
+
 </body>
 </html>
