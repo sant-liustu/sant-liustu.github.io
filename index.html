@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="刘孜涵 - 北京大学数学科学学院 | 机器学习与强化学习研究">
+    <meta name="description" content="刘孜涵 - 北京大学国际机器学习中心博士生 | 大语言模型预训练与后训练研究">
     <title>刘孜涵 Zihan Liu | Peking University</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
         /* --- 1. 全局变量定义 (方便后期一键改色) --- */
         :root {
             /* 北大红 (Deep Red) - 作为强调色 */
-            --primary-color: #8C0000; 
+            --primary-color: #8C0000;
             /* 浅一点的红色用于 Hover 状态 */
             --primary-light: #B51919;
             /* 背景色 */
@@ -230,14 +230,14 @@
                 text-align: center;
                 gap: 20px;
             }
-            
+
             .exp-header {
                 flex-direction: column;
                 gap: 4px;
             }
 
             h1 { font-size: 2rem; }
-            
+
             .nav-links { display: none; /* 手机端暂时隐藏导航链接，保持极简 */ }
         }
     </style>
@@ -251,26 +251,25 @@
                 <a href="#about">About</a>
                 <a href="#research">Research</a>
                 <a href="#education">Education</a>
-                <a href="mailto:your-email@pku.edu.cn">Contact</a>
+                <a href="mailto:liuzihan_22@stu.pku.edu.cn">Contact</a>
             </nav>
         </header>
 
         <section id="about" class="hero">
             <div class="hero-text">
                 <h1>刘孜涵 (Zihan Liu)</h1>
-                <p class="subtitle">Undergraduate Student @ Peking University</p>
+                <p class="subtitle">Ph.D. Student @ Peking University</p>
                 <div class="bio">
                     <p>
-                        您好！我是北京大学数学科学学院的本科生（2022级）。
-                        我对<b>数学与机器学习的交叉领域</b>充满热情，目前专注于大语言模型（LLM）预训练（Pre-training）与强化学习（RL）的算法优化理论研究。
+                        我是刘孜涵，北京大学国际机器学习中心的博士生。
+                        我的研究聚焦于<b>大语言模型预训练</b>，通过数学分析与受控实验，探索能够解释训练现象、指导预训练设计的机制。
                     </p>
                     <p style="margin-top: 1em;">
-                        我致力于通过数学视角来理解和改进现代 AI 系统。
+                        同时，我也研究<b>大语言模型后训练</b>，关注其中具有普适性的定量规律及其机制。
                     </p>
                     <p style="margin-top: 1.5em;">
-                        <a href="https://github.com/sant-liustu" target="_blank">GitHub</a> / 
-                        <a href="#">Google Scholar</a> / 
-                        <a href="#">Email</a>
+                        <a href="https://github.com/sant-liustu" target="_blank">GitHub</a> /
+                        <a href="mailto:liuzihan_22@stu.pku.edu.cn">Email</a>
                     </p>
                 </div>
             </div>
@@ -279,16 +278,34 @@
 
         <section id="research">
             <h2>研究经历 Research</h2>
-            
+
             <div class="experience-item">
                 <div class="exp-header">
-                    <span class="exp-title">强化学习在数学推理中的应用</span>
-                    <span class="exp-date">2025.05 - Present</span>
+                    <span class="exp-title">大语言模型预训练动力学与理论</span>
+                    <span class="exp-date">2025 - 2026</span>
                 </div>
-                <div class="exp-org">研究实习生 | 微软亚洲研究院 (MSRA)</div>
+                <div class="exp-org">北京大学国际机器学习中心 | 导师：吴磊教授</div>
                 <ul>
-                    <li>探索基于强化学习（RL）的方法来提升大语言模型在复杂数学问题上的推理能力。</li>
-                    <li>探索基于推理时扩展（Inference Scaling）的方法来提升大语言模型解决复杂数学问题的上限。</li>
+                    <li>通过理论分析与受控实验，研究大语言模型预训练中的基本规律，识别刻画训练过程的关键变量、缩放关系与动力学结构，并检验其成立条件。</li>
+                    <li>研究有效学习率如何连接学习率、参数范数与损失动力学，以及归一化结构、可学习增益和权重衰减对这一关系的影响。</li>
+                    <li>研究不同模型规模下损失曲线的缩放重合现象，探索其对超参数迁移和训练轨迹预测的意义。</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">LLM Pre-training</span>
+                    <span class="tech-tag">Optimization Dynamics</span>
+                    <span class="tech-tag">Scaling</span>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-title">大语言模型数学推理与推理时计算</span>
+                    <span class="exp-date">2025.05 - 2025.12</span>
+                </div>
+                <div class="exp-org">研究实习生 | 微软亚洲研究院 (MSRA) | Mentor：Shun Zheng</div>
+                <ul>
+                    <li>参与 Deep Self-Evolving Reasoning 研究，将多轮自我修正建模为马尔可夫过程，分析推理时计算扩展的作用。</li>
+                    <li>研究可验证奖励强化学习对基础语言模型正确推理能力的隐式激励，并构建区分答案正确性与推理过程正确性的评估方法。</li>
                 </ul>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
@@ -298,21 +315,42 @@
                 </div>
             </div>
 
-            </section>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="exp-title">混合专家模型训练</span>
+                    <span class="exp-date">2025</span>
+                </div>
+                <div class="exp-org">北京大学国际机器学习中心 | 导师：袁坤教授</div>
+                <ul>
+                    <li>参与 Grouter 研究，探索路由与表示解耦的 MoE 训练方法，完成部分实验代码。</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Mixture of Experts</span>
+                    <span class="tech-tag">Routing</span>
+                </div>
+            </div>
+        </section>
 
         <section id="education">
             <h2>教育背景 Education</h2>
             <div class="edu-item">
                 <div>
-                    <div class="edu-school">北京大学 (Peking University)</div>
-                    <div class="edu-degree">理学学士，数学与应用数学</div>
+                    <div class="edu-school">北京大学 · 国际机器学习中心</div>
+                    <div class="edu-degree">数据科学博士研究生</div>
                 </div>
-                <div class="exp-date">2022 - 2026 (Expected)</div>
+                <div class="exp-date">2026 - Present</div>
+            </div>
+            <div class="edu-item">
+                <div>
+                    <div class="edu-school">北京大学 · 数学科学学院</div>
+                    <div class="edu-degree">数学学士</div>
+                </div>
+                <div class="exp-date">2022 - 2026</div>
             </div>
         </section>
 
         <footer>
-            <p>© 2025 Zihan Liu. Built with minimalism.</p>
+            <p>© 2026 Zihan Liu. Built with minimalism.</p>
         </footer>
     </div>
 
